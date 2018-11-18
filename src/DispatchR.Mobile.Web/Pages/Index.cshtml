@@ -1,0 +1,40 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "DispatchR Mobile";
+}
+
+<div class="container-fluid" id="map">
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="mapClickedModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" id="locationDialog">
+        This location needs assistance. Click the <strong>I'll check it out</strong> button below to accept this mission and head to the place.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal" id="acceptMission" data-placeId="" onclick="acceptMisson(this);">I'll check it out!</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" id="closeButton">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section scripts
+{
+<script src="https://www.bing.com/api/maps/mapcontrol?key=AqapeevaeqxgZlYX8wfg-M9m4JdW7s3Qx42BqBcDY8n22hk7j1U4mSC5pYezdqym"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="~/js/signalr.min.js"></script>
+<script src="~/js/constants.js"></script>
+<script src="~/js/setup.js"></script>
+<script src="~/js/site.js"></script>
+<script src="~/js/connect.js"></script>
+}
